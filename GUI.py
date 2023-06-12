@@ -1,3 +1,4 @@
+
 import pandas as pd
 import tkinter as tk
 from tkinter import filedialog, messagebox, IntVar, ttk
@@ -148,7 +149,7 @@ def process_csv(file_path, heatmaps_label):
     elif target_variable_value == 2:
         target_variable = "Impression"
     elif target_variable_value == 3:
-        target_variable = "Video Views at 25%"
+        target_variable = "Click"
 
     y = df[target_variable]  # Target variable
 
@@ -226,7 +227,7 @@ def process_csv(file_path, heatmaps_label):
     sns.heatmap(corr_matrix, cmap='RdYlBu', annot=True, ax=ax1)
     ax1.set_title("Correlation Matrix")
     ax1.set_xticklabels(ax1.get_xticklabels(), rotation=45, ha='right')
-    ax1.set_yticklabels(ax1.get_yticklabels(), rotation=0, ha='right')
+    ax1.set_yticklabels(ax1.get_yticklabels(), rotation=0, ha='right')  
 
     # Plot RFE heatmap
     sns.heatmap(corr_matrix_rfe, cmap='RdYlBu', annot=True, ax=ax2)
@@ -298,7 +299,7 @@ right_frame = tk.Frame(root, bg="#f2f2f2")
 right_frame.pack(side=tk.LEFT, padx=10, pady=10)
 
 # Create a label for the radio buttons
-radio_label = tk.Label(left_frame, text="Select Target Variable:", font=("Arial", 12))
+radio_label = tk.Label(left_frame, text="Select Target Objective:", font=("Arial", 12))
 radio_label.pack()
 
 # Create an IntVar to hold the selected target variable choice
@@ -314,13 +315,13 @@ def update_target_variable():
         # Target variable is "Impression"
         target_variable_label.configure(text="Target Variable: Impression")
     elif target_variable == 3:
-        # Target variable is "Video Views at 25%"
-        target_variable_label.configure(text="Target Variable: Video Views at 25%")
+        # Target variable is "Click"
+        target_variable_label.configure(text="Target Variable: Clicks")
 
 # Create the radio buttons for target variable choice
 radio_button1 = tk.Radiobutton(
     left_frame,
-    text="Results",
+    text="Conversion",
     variable=target_var_choice,
     value=1,
     command=update_target_variable,
@@ -330,7 +331,7 @@ radio_button1.pack()
 
 radio_button2 = tk.Radiobutton(
     left_frame,
-    text="Impression",
+    text="Awareness",
     variable=target_var_choice,
     value=2,
     command=update_target_variable,
@@ -340,7 +341,7 @@ radio_button2.pack()
 
 radio_button3 = tk.Radiobutton(
     left_frame,
-    text="Video Views at 25%",
+    text="Consideration",
     variable=target_var_choice,
     value=3,
     command=update_target_variable,

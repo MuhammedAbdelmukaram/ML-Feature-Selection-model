@@ -56,7 +56,6 @@ missing module named setuptools.extern.ordered_set - imported by setuptools.exte
 missing module named setuptools.extern.packaging - imported by setuptools.extern (top-level), setuptools.dist (top-level), setuptools._normalization (top-level), setuptools.command.egg_info (top-level), setuptools.depends (top-level)
 missing module named setuptools.extern.importlib_metadata - imported by setuptools.extern (conditional), setuptools._importlib (conditional)
 missing module named 'setuptools.extern.more_itertools' - imported by setuptools.dist (top-level), setuptools.config.expand (delayed), setuptools.config.pyprojecttoml (delayed), setuptools._itertools (top-level), setuptools._entry_points (top-level), setuptools.msvc (top-level), setuptools._vendor.jaraco.functools (top-level)
-missing module named typing_extensions - imported by seaborn._core.plot (conditional), joblib.externals.cloudpickle.cloudpickle (optional), setuptools.config._validate_pyproject.formats (conditional), setuptools.command.build (conditional), packaging.metadata (conditional, optional)
 missing module named jnius - imported by pkg_resources._vendor.platformdirs.android (delayed, optional)
 missing module named platformdirs - imported by pkg_resources._vendor.platformdirs.__main__ (top-level)
 missing module named 'pkg_resources.extern.importlib_resources' - imported by pkg_resources._vendor.jaraco.text (optional)
